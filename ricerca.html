@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trova lavoro!</title>
+    <style>
+      body {
+        background-color: rgb(68, 121, 255);
+        font-family: "Grandiflora One", serif;
+        margin: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      header {
+        color: white;
+        font-size: 5.5em;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        margin-top: 3%;
+        margin-bottom: 5%;
+        box-shadow: rgb(18, 55, 150) 0px 0px 5px;
+      }
+      header h1 {
+        margin: 4% 0 4% 0;
+      }
+
+      main {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        margin-bottom: 10%;
+      }
+      #container {
+        width: 50%;
+        border-radius: 10px;
+        color: white;
+        font-size: larger;
+      }
+
+      form {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      input {
+        border-radius: 10px;
+        border: none;
+        padding: 15px;
+        margin: 15px;
+        width: 250px;
+        box-shadow: rgb(18, 55, 150) 1px 1px 2px;
+      }
+      button {
+        cursor: pointer;
+        font-family: "Grandiflora One", serif;
+        font-size: 2em;
+        width: 200px;
+        padding: 5px;
+        margin: 25px 0 40px 0;
+        background-color: white;
+        color: rgb(68, 121, 255);
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        box-shadow: rgb(18, 55, 150) 1px 1px 2px;
+      }
+
+      #results {
+        color: white;
+        width: 50%;
+        border-left: 2px solid white;
+        box-sizing: border-box;
+      }
+
+      #results h2 {
+        font-size: 2.8em;
+        margin: 0;
+      }
+
+      table {
+        font-size: 1.3em;
+        border-collapse: collapse;
+        text-align: left;
+        margin: 0 auto 0 auto;
+      }
+
+      tr:nth-child(even) {
+        color: white;
+        background-color: rgb(107, 148, 252);
+      }
+      tr:hover:not(:nth-child(1)) {
+        color: rgb(18, 55, 150);
+        background-color: white;
+        font-weight: bolder;
+      }
+
+      #input_search {
+        font-weight: 600;
+        font-size: 1.5em;
+        width: 70%;
+      }
+
+      #button_search {
+        width: 30%;
+        border-left: 2px solid white;
+      }
+
+      .fa-solid {
+        margin-top: 50px;
+        display: none;
+      }
+
+      @keyframes myAnimation {
+        from {
+          opacity: 0%;
+          transform: scale(0);
+        }
+        to {
+          opacity: 100%;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Trova il lavoro perfetto.</h1></header>
+    <main>
+      <div id="container">
+        <form action="" id="form_ricerca">
+          <div id="input_search">
+            <label for="geo">Inserisci l'area geografica di ricerca</label
+            ><br />
+            <input
+              type="text"
+              id="geo"
+              placeholder="Inserisci lo Stato"
+            /><br />
+            <label for="job">Inserisci la posizione lavorativa ricercata</label
+            ><br />
+            <input
+              type="text"
+              id="job"
+              placeholder="Inserisci posizione Lavorativa"
+            />
+          </div>
+          <div id="button_search">
+            <button type="button" onclick="validare()">CERCA</button>
+          </div>
+        </form>
+      </div>
+      <div id="results">
+        <h2>Risultati della tua ricerca:</h2>
+        <p></p>
+        <i class="fa-solid fa-skull fa-2xl" style="color: #ffffff"></i>
+        <table id="mostra_risultati"></table>
+      </div>
+    </main>
+    <script type="text/javascript" src="finaleJavascript.js"></script>
+  </body>
+</html>
